@@ -1,6 +1,5 @@
 package application;
 
-import boardgame.Position;
 import chess.ChessException;
 import chess.ChessMatch;
 import chess.ChessPiece;
@@ -35,6 +34,16 @@ public class App {
 
                 if(capturedPiece != null){
                     captured.add(capturedPiece);
+                }
+
+                if(chessMatch.getPromoted() != null){
+                    System.out.print("Enter piece for promotion (Q/B/N/R): ");
+                    String type = sc.nextLine().toUpperCase();
+                    while(!type.equals("B") && !type.equals("N") && !type.equals("R") && !type.equals("Q")){
+                        System.out.print("Invalid input. Enter piece for promotion (Q/B/N/R): ");
+                        type = sc.nextLine().toUpperCase();
+                    }
+                    chessMatch.replacePromotedPiece(type);
                 }
 
             } catch (ChessException e){
