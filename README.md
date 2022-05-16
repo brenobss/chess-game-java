@@ -1,6 +1,6 @@
 # chess-game-java
 Essa aplicação roda via terminal
-#Como executar
+# Como executar
 ## IDE
 Baixe uma IDE para java, recomendo o eclipse
 ## Build o projeto
